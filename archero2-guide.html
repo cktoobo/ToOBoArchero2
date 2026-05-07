@@ -325,6 +325,61 @@
     opacity: 0.6;
   }
 
+  /* Radar chart */
+  .radar-section {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .radar-canvas-wrap {
+    flex-shrink: 0;
+  }
+
+  .radar-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .radar-label-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .radar-label-item .label-name {
+    color: var(--muted);
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .radar-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .radar-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--accent), var(--fire));
+  }
+
+  .radar-score {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 12px;
+    width: 20px;
+    text-align: right;
+  }
+
   /* Footer */
   footer {
     position: relative;
@@ -402,6 +457,39 @@
       </div>
     </div>
 
+    <div class="radar-section">
+      <div class="radar-canvas-wrap">
+        <canvas id="radar-fire-mage" width="140" height="140"></canvas>
+      </div>
+      <div class="radar-labels">
+        <div class="radar-label-item">
+          <span class="label-name">彈幕密度</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:60%"></div></div>
+          <span class="radar-score">3</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">命中精準</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">走位壓力</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">招式變化</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:60%"></div></div>
+          <span class="radar-score">3</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">攻擊頻率</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+      </div>
+    </div>
+
     <div class="boss-footer">
       <div class="difficulty">
         難度
@@ -457,6 +545,39 @@
         <div class="tip-item">
           <div class="tip-icon">🔄</div>
           <div class="tip-text"><strong>環繞走位</strong><br>以圓形路線繞著Boss移動，避免被角落逼死</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="radar-section">
+      <div class="radar-canvas-wrap">
+        <canvas id="radar-scythe" width="140" height="140"></canvas>
+      </div>
+      <div class="radar-labels">
+        <div class="radar-label-item">
+          <span class="label-name">彈幕密度</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">命中精準</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:60%"></div></div>
+          <span class="radar-score">3</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">走位壓力</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:100%"></div></div>
+          <span class="radar-score">5</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">招式變化</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:60%"></div></div>
+          <span class="radar-score">3</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">攻擊頻率</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
         </div>
       </div>
     </div>
@@ -521,6 +642,39 @@
       </div>
     </div>
 
+    <div class="radar-section">
+      <div class="radar-canvas-wrap">
+        <canvas id="radar-fire-king" width="140" height="140"></canvas>
+      </div>
+      <div class="radar-labels">
+        <div class="radar-label-item">
+          <span class="label-name">彈幕密度</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:60%"></div></div>
+          <span class="radar-score">3</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">命中精準</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:100%"></div></div>
+          <span class="radar-score">5</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">走位壓力</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:100%"></div></div>
+          <span class="radar-score">5</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">招式變化</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+        <div class="radar-label-item">
+          <span class="label-name">攻擊頻率</span>
+          <div class="radar-bar"><div class="radar-bar-fill" style="width:80%"></div></div>
+          <span class="radar-score">4</span>
+        </div>
+      </div>
+    </div>
+
     <div class="boss-footer">
       <div class="difficulty">
         難度
@@ -543,4 +697,79 @@
 </footer>
 
 </body>
+<script>
+function drawRadar(canvasId, scores, color) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const cx = 70, cy = 70, r = 52;
+  const n = scores.length;
+  const angleStep = (Math.PI * 2) / n;
+  const startAngle = -Math.PI / 2;
+
+  // Draw background grid
+  for (let level = 1; level <= 5; level++) {
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const angle = startAngle + i * angleStep;
+      const lr = (r * level) / 5;
+      const x = cx + lr * Math.cos(angle);
+      const y = cy + lr * Math.sin(angle);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // Draw axes
+  for (let i = 0; i < n; i++) {
+    const angle = startAngle + i * angleStep;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * Math.cos(angle), cy + r * Math.sin(angle));
+    ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // Draw filled area
+  ctx.beginPath();
+  for (let i = 0; i < n; i++) {
+    const angle = startAngle + i * angleStep;
+    const lr = (r * scores[i]) / 5;
+    const x = cx + lr * Math.cos(angle);
+    const y = cy + lr * Math.sin(angle);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = color.replace('1)', '0.25)');
+  ctx.fill();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Draw dots
+  for (let i = 0; i < n; i++) {
+    const angle = startAngle + i * angleStep;
+    const lr = (r * scores[i]) / 5;
+    const x = cx + lr * Math.cos(angle);
+    const y = cy + lr * Math.sin(angle);
+    ctx.beginPath();
+    ctx.arc(x, y, 3, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+}
+
+// 火焰小法師: 彈幕密度3, 命中精準4, 走位壓力4, 招式變化3, 攻擊頻率4
+drawRadar('radar-fire-mage', [3, 4, 4, 3, 4], 'rgba(249,115,22,1)');
+
+// 鐮刀怪: 彈幕密度4, 命中精準3, 走位壓力5, 招式變化3, 攻擊頻率4
+drawRadar('radar-scythe', [4, 3, 5, 3, 4], 'rgba(139,92,246,1)');
+
+// 火焰魔王: 彈幕密度3, 命中精準5, 走位壓力5, 招式變化4, 攻擊頻率4
+drawRadar('radar-fire-king', [3, 5, 5, 4, 4], 'rgba(239,68,68,1)');
+</script>
 </html>
